@@ -1,61 +1,27 @@
 # Codeforces Round #665 (Div. 2)
-
-Contest Link: https://codeforces.com/contest/1401
+[https://codeforces.com/contest/1401](https://codeforces.com/contest/1401)
 
 ## Problems
 
-### A. Distance and Axis
-- Rating: 900
-- Tags: Math, Number Theory
-- Approach: Case analysis based on relationship between N and K
-- Key Insight: When N ≥ K, parity of N-K determines solution
-- Time Complexity: O(1)
-- Space Complexity: O(1)
+### A. Distance and Axis [900]
+- Find min moves to make |pos - point| = K
+- Solution: 
+  - Case n < k: Need k-n moves
+  - Case n ≥ k: Need 1 move if n-k odd, 0 if even
+- Complexity: O(1)
 
-### B. Ternary Sequence
-- Rating: 1100
-- Tags: Constructive Algorithms, Greedy
-- Approach: Maximize positive contributions first, then minimize negative ones
-- Key Insight: Always match 2s with 1s before considering other matches
-- Time Complexity: O(1)
-- Space Complexity: O(1)
+### B. Ternary Sequence [1100]
+- Max sum of pairwise products after permutation
+- Solution:
+  - Match 2s with 1s first (+2 each)
+  - Minimize negative contributions from remaining 2s
+  - Track counts instead of permutations
+- Complexity: O(1)
 
-### C. Mere Array
-- Rating: 1300
-- Tags: Math, Sorting
-- Approach: Use properties of GCD and sorting
-- Key Insight: Elements not divisible by minimum must already be in sorted positions
-- Time Complexity: O(N log N)
-- Space Complexity: O(N)
-
-## Implementation Notes
-
-### Code Organization
-- Object-oriented design for each solution
-- Clear separation of logic and I/O
-- Comprehensive error handling
-- Consistent coding style
-
-### Common Techniques Used
-1. Mathematical Analysis
-2. Greedy Algorithms
-3. Sorting
-4. Case Analysis
-
-### Problem-Solving Patterns
-- Look for mathematical properties
-- Consider edge cases carefully
-- Use sorting for comparison
-- Think about invariants
-
-## Learning Points
-1. Importance of mathematical observations
-2. Efficient use of sorting
-3. Handling edge cases systematically
-4. Greedy strategy optimization
-
-## Contest Highlights
-- Strong focus on mathematical thinking
-- Mix of implementation and theory
-- Clear difficulty progression
-- Interesting constraints and conditions
+### C. Mere Array [1300]
+- Sort array by swapping elements divisible by minimum
+- Solution:
+  - Elements not divisible by min are fixed points
+  - Check if misplaced elements are divisible by min
+  - Sort copy to determine final positions
+- Complexity: O(N log N)

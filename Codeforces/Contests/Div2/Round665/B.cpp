@@ -1,70 +1,57 @@
 /*
-Problem: Ternary Sequence
-Link: https://codeforces.com/contest/1401/problem/B
-Contest: Codeforces Round #665 (Div. 2)
-Approach: Greedy
-         1. First maximize positive contributions (2s matching with 1s)
-         2. Then minimize negative contributions (2s matching with 0s)
-         Key insight: Order of matching matters - always try to match 2s with 1s first
-Time: O(1)
-Space: O(1)
+CF Round 665 (Div. 2) - Problem B
+https://codeforces.com/contest/1401/problem/B
+
+Max sum of pairwise products after permutation where:
+- Two arrays of length n containing only {0,1,2}
+- Can rearrange elements in each array
+- Sum = Σ a[i]*b[i]
+
+Constraints:
+- 1 ≤ t ≤ 100
+- a[i], b[i] ∈ {0,1,2}
+- Sum of array elements matches input
+
+Solution:
+1. Match 2s with 1s first (contribution of +2)
+2. Minimize negative contributions from remaining 2s
+3. Track counts instead of actual permutations
+
+Complexity: O(1) per test case
 */
 
 #include <bits/stdc++.h>
 using namespace std;
-
 typedef long long ll;
-
-class SequenceSolver {
-private:
-    // First sequence counts
-    ll zeros1, ones1, twos1;
-    // Second sequence counts
-    ll zeros2, ones2, twos2;
-    
-    ll solve() {
-        ll result = 0;
-        
-        // First maximize positive contributions (2 * 1 = 2)
-        ll matching_two_one = min(twos1, ones2);
-        result += 2 * matching_two_one;
-        twos1 -= matching_two_one;
-        ones2 -= matching_two_one;
-        
-        // Then minimize negative contributions (2 * 0 = 0)
-        // We want to avoid matching remaining 2s with 0s
-        ll remaining_twos2 = twos2;
-        ll available_buffer = zeros1 + twos1;  // Numbers that can match with 2s
-        
-        // If we can't avoid some 2-0 matches, they contribute -2 each
-        if(remaining_twos2 > available_buffer) {
-            result -= 2 * (remaining_twos2 - available_buffer);
-        }
-        
-        return result;
-    }
-    
-public:
-    void process() {
-        // Read input
-        cin >> zeros1 >> ones1 >> twos1;
-        cin >> zeros2 >> ones2 >> twos2;
-        
-        // Output result
-        cout << solve() << "\n";
-    }
-};
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int TC;
-    cin >> TC;
-    while(TC--) {
-        SequenceSolver solver;
-        solver.process();
+    int t;
+    cin >> t;
+    while(t--) {
+        ll a0, a1, a2;  // counts of 0s, 1s, 2s in first array
+        ll b0, b1, b2;  // counts in second array
+        cin >> a0 >> a1 >> a2;
+        cin >> b0 >> b1 >> b2;
+        
+        ll ans = 0;
+        // First maximize positive contributions (2*1)
+        ll match = min(a2, b1);
+        ans += 2 * match;
+        a2 -= match;
+        b1 -= match;
+        
+        // Then minimize negative contributions (2*0)
+        ll remaining_twos = b2;
+        ll available = a0 + a2;  // numbers that can match with 2s
+        
+        if(remaining_twos > available) {
+            ans -= 2 * (remaining_twos - available);
+        }
+        
+        cout << ans << '\n';
     }
-    
     return 0;
 }

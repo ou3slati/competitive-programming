@@ -1,78 +1,62 @@
 /*
-Problem: Mere Array
-Link: https://codeforces.com/contest/1401/problem/C
-Contest: Codeforces Round #665 (Div. 2)
-Approach: Math + Sorting
-         1. Find minimum element in array
-         2. Elements not divisible by minimum can't be swapped
-         3. Check if these elements are already in sorted position
-         Key insight: Elements divisible by minimum can be swapped freely
-Time: O(N log N)
-Space: O(N)
+CF Round 665 (Div. 2) - Problem C
+https://codeforces.com/contest/1401/problem/C
+
+Check if array can be sorted by swapping elements where:
+- Can only swap if both elements divisible by min element
+- Need to determine if sorting is possible
+
+Constraints:
+- 1 ≤ t ≤ 10^4
+- 1 ≤ n ≤ 10^5
+- 1 ≤ a[i] ≤ 10^9
+
+Solution:
+1. Find minimum element m
+2. Create sorted copy
+3. For each position i:
+   - If a[i] ≠ sorted[i] then a[i] must be divisible by m
+   - Otherwise array unsortable
+4. Proof: Elements not divisible by m form fixed points
+
+Complexity: O(N log N) for sorting
 */
 
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define all(x) begin(x), end(x)
-
-class ArraySolver {
-private:
-    int N;
-    vector<ll> original, sorted;
-    ll minimum;
-    
-    // Find minimum element in array
-    void findMinimum() {
-        minimum = *min_element(all(original));
-    }
-    
-    // Check if array can be sorted
-    bool canSort() {
-        // Create sorted copy
-        sorted = original;
-        sort(all(sorted));
-        
-        // Check each position
-        for(int i = 0; i < N; i++) {
-            // If element differs from sorted position
-            if(original[i] != sorted[i]) {
-                // If not divisible by minimum, we can't swap it
-                if(original[i] % minimum != 0) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-public:
-    void process() {
-        // Read input
-        cin >> N;
-        original.resize(N);
-        for(int i = 0; i < N; i++) {
-            cin >> original[i];
-        }
-        
-        // Solve and output
-        findMinimum();
-        cout << (canSort() ? "YES" : "NO") << "\n";
-    }
-};
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int TC;
-    cin >> TC;
-    while(TC--) {
-        ArraySolver solver;
-        solver.process();
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n), sorted(n);
+        
+        // Read and find minimum
+        int min_elem = INT_MAX;
+        for(int i = 0; i < n; i++) {
+            cin >> a[i];
+            sorted[i] = a[i];
+            min_elem = min(min_elem, a[i]);
+        }
+        
+        // Sort copy for comparison
+        sort(sorted.begin(), sorted.end());
+        
+        // Check if misplaced elements are divisible by minimum
+        bool possible = true;
+        for(int i = 0; i < n; i++) {
+            if(a[i] != sorted[i] && a[i] % min_elem != 0) {
+                possible = false;
+                break;
+            }
+        }
+        
+        cout << (possible ? "YES" : "NO") << '\n';
     }
-    
     return 0;
 }

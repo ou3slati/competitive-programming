@@ -3,17 +3,17 @@
 
 ## Problems
 
-### A. Distance and Axis [900]
-- |pos - point| = K, minimize moves
-- Key: When N ≥ K, parity of N-K determines solvability
+### A. Distance and Axis [800]
+- Find min moves to make |pos - point| = k
+- Key: Check n < k and parity
 - O(1)
 
 ### B. Ternary Sequence [1100]
-- Max Σ(a[i]*b[i]) after permutation, elements in {0,1,2}
-- Key: 2*1 gives +2, 2*0 gives 0, others irrelevant
+- Max sum after permuting arrays
+- Key: Match 2s with 1s first
 - O(1)
 
 ### C. Mere Array [1300]
-- Sort by swapping elements divisible by min
-- Key: Non-divisible elements are fixed points
+- Check if array sortable with gcd rule
+- Key: Elements not divisible by min are fixed
 - O(N log N)

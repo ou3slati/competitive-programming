@@ -2,11 +2,10 @@
 CF 665A - Distance and Axis
 https://codeforces.com/contest/1401/problem/A
 
-Move point to satisfy |pos - point| = K
-n,k ≤ 10^9
+Min moves to make |pos - point| = k
+n,k ≤ 1e9
 
-Key: When n ≥ k, need same parity for n-k
-When n < k, must reach k
+Key: Check n < k and parity
 */
 
 #include <bits/stdc++.h>
@@ -16,8 +15,7 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int t;
-    cin >> t;
+    int t; cin >> t;
     while(t--) {
         int n, k;
         cin >> n >> k;

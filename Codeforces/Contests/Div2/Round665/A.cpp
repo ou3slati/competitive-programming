@@ -1,21 +1,12 @@
 /*
-CF Round 665 (Div. 2) - Problem A
+CF 665A - Distance and Axis
 https://codeforces.com/contest/1401/problem/A
 
-Find min moves to make |pos - point| = K where:
-- Can move point on number line
-- Can place axis point anywhere
-- Need |distance| = K
+Move point to satisfy |pos - point| = K
+n,k ≤ 10^9
 
-Constraints:
-- 1 ≤ t ≤ 10^4
-- 0 ≤ n,k ≤ 10^9
-
-Solution:
-Case n < k: Need k-n moves to reach minimum possible
-Case n ≥ k: Need 1 move if n-k odd (can't satisfy), 0 if even
-
-Complexity: O(1)
+Key: When n ≥ k, need same parity for n-k
+When n < k, must reach k
 */
 
 #include <bits/stdc++.h>
@@ -30,9 +21,7 @@ int main() {
     while(t--) {
         int n, k;
         cin >> n >> k;
-        
-        if(n < k) cout << k-n << '\n';
-        else cout << (n-k) % 2 << '\n';
+        cout << (n < k ? k-n : (n-k)%2) << '\n';
     }
     return 0;
 }

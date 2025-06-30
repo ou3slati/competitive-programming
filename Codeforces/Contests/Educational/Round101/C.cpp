@@ -1,80 +1,15 @@
 /*
-Problem: Building a Fence
-Link: https://codeforces.com/contest/1469/problem/C
-Contest: Educational Codeforces Round 101 (Rated for Div. 2)
-Approach: Greedy + Simulation
-         1. For each position, try to minimize height differences
-         2. If difference between adjacent positions is too large, adjust heights
-         3. Check if final configuration is valid:
-            - Adjacent heights differ by at most K-1
-            - No height exceeds original height + K-1
-Time: O(N*X) where X is iteration count for adjustments
-Space: O(N) for storing heights
+EDU 101C - Building a Fence
+https://codeforces.com/contest/1469/problem/C
+
+Check if fence possible with height constraints
+n ≤ 2e5, h[i],k ≤ 1e9
+
+Key: Track min/max possible height at each position
 */
 
 #include <bits/stdc++.h>
 using namespace std;
-
-typedef long long ll;
-#define FOR(i,a,b) for(int i = (a); i < (b); ++i)
-#define sz(x) (int)(x).size()
-
-class FenceSolver {
-private:
-    int N, K;
-    vector<ll> original, heights;
-    
-    // Adjust heights to minimize differences
-    void adjustHeights() {
-        const int ITERATIONS = 10;  // Number of adjustment iterations
-        
-        FOR(iter,0,ITERATIONS) {
-            FOR(i,1,N) {
-                // If difference is too large, adjust heights
-                if(heights[i] - heights[i-1] >= K) {
-                    if(i != 1) {
-                        heights[i-1] += heights[i] - heights[i-1] - (K-1);
-                    }
-                }
-                else if(heights[i-1] - heights[i] >= K) {
-                    if(i != N-1) {
-                        heights[i] += heights[i-1] - heights[i] - (K-1);
-                    }
-                }
-            }
-        }
-    }
-    
-    // Check if configuration is valid
-    bool isValid() {
-        FOR(i,0,N) {
-            // Check difference with previous height
-            if(i > 0 && abs(heights[i] - heights[i-1]) > K-1) {
-                return false;
-            }
-            
-            // Check if height exceeds maximum allowed
-            if(heights[i] > original[i] + K-1) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-public:
-    string solve(int n, int k, vector<ll>& h) {
-        // Initialize variables
-        N = n;
-        K = k;
-        original = heights = h;
-        
-        // Try to adjust heights
-        adjustHeights();
-        
-        // Check if solution is valid
-        return isValid() ? "YES" : "NO";
-    }
-};
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -85,13 +20,23 @@ int main() {
     while(t--) {
         int n, k;
         cin >> n >> k;
+        vector<int> h(n);
+        for(int i = 0; i < n; i++) cin >> h[i];
         
-        vector<ll> h(n);
-        FOR(i,0,n) cin >> h[i];
+        bool possible = true;
+        long long minH = h[0], maxH = h[0];
         
-        FenceSolver solver;
-        cout << solver.solve(n, k, h) << "\n";
+        for(int i = 1; i < n; i++) {
+            minH = max(h[i], minH - (k-1));
+            maxH = min(h[i] + k-1, maxH + k-1);
+            if(minH > maxH) {
+                possible = false;
+                break;
+            }
+            if(i == n-1 && h[i] != minH) possible = false;
+        }
+        
+        cout << (possible ? "YES" : "NO") << '\n';
     }
-    
     return 0;
 }

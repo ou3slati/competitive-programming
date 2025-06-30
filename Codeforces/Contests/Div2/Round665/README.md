@@ -4,24 +4,16 @@
 ## Problems
 
 ### A. Distance and Axis [900]
-- Find min moves to make |pos - point| = K
-- Solution: 
-  - Case n < k: Need k-n moves
-  - Case n ≥ k: Need 1 move if n-k odd, 0 if even
-- Complexity: O(1)
+- |pos - point| = K, minimize moves
+- Key: When N ≥ K, parity of N-K determines solvability
+- O(1)
 
 ### B. Ternary Sequence [1100]
-- Max sum of pairwise products after permutation
-- Solution:
-  - Match 2s with 1s first (+2 each)
-  - Minimize negative contributions from remaining 2s
-  - Track counts instead of permutations
-- Complexity: O(1)
+- Max Σ(a[i]*b[i]) after permutation, elements in {0,1,2}
+- Key: 2*1 gives +2, 2*0 gives 0, others irrelevant
+- O(1)
 
 ### C. Mere Array [1300]
-- Sort array by swapping elements divisible by minimum
-- Solution:
-  - Elements not divisible by min are fixed points
-  - Check if misplaced elements are divisible by min
-  - Sort copy to determine final positions
-- Complexity: O(N log N)
+- Sort by swapping elements divisible by min
+- Key: Non-divisible elements are fixed points
+- O(N log N)

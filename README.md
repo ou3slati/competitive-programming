@@ -2,76 +2,60 @@
 
 This repository contains my solutions to various competitive programming problems from different online judges and competitions.
 
-## Contents
+## Author
+**Amine Oueslati** ([@ou3slati](https://github.com/ou3slati))
 
-### International Competitions
-- **IOI (International Olympiad in Informatics)**
-  - Solutions from IOI 2006-2022
-  - Practice problems and national team selection rounds
-  
-- **APIO (Asia-Pacific Informatics Olympiad)**
-  - Solutions from multiple years
-  - Training problems
+## Structure
 
-- **CEOI (Central European Olympiad in Informatics)**
-  - Contest solutions
-  - Practice problems
+```
+competitive-programming/
+├── Codeforces/
+│   ├── Contests/
+│   │   ├── Div1/
+│   │   ├── Div2/
+│   │   ├── Educational/
+│   │   └── Global/
+│   └── Problemset/
+├── IOI/
+├── APIO/
+├── CEOI/
+├── AtCoder/
+├── USACO/
+└── Library/
+    ├── Templates/
+    ├── Data_Structures/
+    ├── Algorithms/
+    └── Math/
+```
 
-### Online Judges
-- **Codeforces**
-  - Regular contest solutions
-  - Educational rounds
-  - Problem set solutions organized by topic
-  
-- **AtCoder**
-  - ABC (AtCoder Beginner Contest)
-  - ARC (AtCoder Regular Contest)
-  - Educational DP contest
-  
-- **USACO**
-  - Contest solutions
-  - Training problems
+## Features
+- Well-documented solutions
+- Clean and efficient implementations
+- Detailed explanations and approaches
+- Organized by contest/platform
 
-### Topics
-- Data Structures
-- Dynamic Programming
-- Graph Theory
-- Mathematics
-- String Algorithms
-- Geometry
+## Solutions
+Each solution includes:
+- Problem link and description
+- Solution approach and complexity analysis
+- Clean, commented code
+- Test cases (where applicable)
 
-## Code Library
-Contains implementations of common algorithms and data structures used in competitive programming:
-- Templates
-- Data Structures (Segment Tree, Fenwick Tree, etc.)
-- Graph Algorithms
-- String Algorithms
-- Mathematical Functions
-
-## Resources
-- Notes and tutorials
-- Contest preparation materials
-- Useful links and references
+## Library
+Collection of algorithms and data structures commonly used in competitive programming:
+- Templates for different types of problems
+- Standard algorithms implementations
+- Efficient data structures
+- Mathematical functions and utilities
 
 ## Usage
-Each solution typically includes:
-- Problem link/description
-- Solution approach
-- Time and space complexity
-- Implementation in C++
-
-## Environment
-- Language: C++
-- Compiler: g++
-- Standard: C++17
+Each solution is self-contained and can be compiled with C++17:
+```bash
+g++ -std=c++17 solution.cpp -o solution
+```
 
 ## Contributing
-Feel free to open issues for any bugs or improvements. Pull requests are welcome!
+This is a personal repository for my competitive programming solutions. However, if you find any bugs or have suggestions for improvements, feel free to open an issue.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-[Your Name]
-- IOI Participant
-- [Additional achievements/credentials]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,0 +1,161 @@
+-practice implementation & speed solving 
+
+**TODO:
+-Contests: solve & upsolve
+-Do research
+	
+**********************************************************************
+**TOPICS:
+
+*LIST: (++: in the IOI syllabus)
+
+++-Persitent data structures (path copying) (Persistent seg. tree)
+++-Decision tree (interactive problems)
+++-Euler formula + planar graphs
+++-Biconnected components
+++-Divide & Conquer - SRQ
+++-Binary search tree (statically balanced/balanced/augmented)
+++-2D range queries
+
+-Convex Hull trick
+-Inclusion exclusion
+++-Probability (expected value,...)
+++-Strongly connected components
+++-Bipartite matching
+++-Hamiltonian cycle
+++-Eulerian cycle
+++-Handshaking lemma
+++-BIT (range queries)
+-Ternary search
+++-median-of-medians algorithm (O(N) worst-case) 
+
+++-DSU
+++-Dp on tree
+++-non-trivial DP optimizations
+++-game theory
+
+-Rerooting technique (CF 695 E)
+-Li Chao tree
+-Suffix array
+-Sqrt tree
+-Sparse table
+-Wavelet trees
+-K-D tree 
+-Nesting of data structures
+-BellmanFord
+
+*Learned recently:
+-DSU with rollbacks
+-2D hashing (see COCI 20 C3 Sateliti)
+-Sets with custom comparators
+-Sliding median (see APIO 15 bridges)
+-Finding majority element in 3N/2 (rounded up) queries : 
+Fisher & Salzberg's algo (see IOI 15 towns)
+-Get the min/max of a range of fixed length in O(1) with linear precomputation
+(see IOI 2006 pyramid)
+-Nb of points in range [l1,r1]*[l2,r2] using a static seg tree
+(see IOI 2018 Werewolf)
+-Multidimensional Fenwick Tree
+-Nb of pairs of points (i,j) such that ManhattanDist(i,j) <= D (view IOI 2007 pairs) 
+-Centroid decomposition
+-Adding minimum nb of edges to a tree st it stays connected whenever a single edge is removed (BOI 15 Network)
+-Tries
+-Bitsets (bitwise operations) with boolean dp states (Nautilus BOI 2019) 
+-Heavy-Light decomposition 
+-Combining functions using a segment tree (fk(fk-1(..(f1(x))..))))(See Vertex Set Path Composite (USACO guide: HLD module))
+-Seg tree: lazy sum updates + max queries
+-Virtual tree (to work with queries involving set of nodes)
+-Segment tree: walking + non-cumulative functions (USACO guide)
+-Binary lifting on a DAG (divided to N/K groups) (see BOI 17: Toll)
+-Binary lifting on fenwick trees
+-Mo's algorithm
+-LCA & Binary lifting
+-Euler Path (tree)
+-Sum of distances between all pairs in a tree
+-Prefix sum on a tree
+
+******************
+**Stuff from the IOI syllabus (do some research)
+
+*Discrete Structures (DS)
+1. Functions, relations, and sets
+-Functions (surjections, injections, inverses, composition)
+-Relations (reflexivity, symmetry, transitivity, equivalence
+relations, total/linear order relations, lexicographic order)
+-Sets (inclusion/exclusion, complements, Cartesian products,
+power sets)
+
+2. Basic logic
+✓ First-order logic
+✓ Logical connectives (incl. their basic properties)
+✓ Truth tables
+✓ Universal and existential quantification (Note: statements
+should avoid definitions with nested quantifiers whenever
+possible.)
+✓p Modus ponens and modus tollens
+? Normal forms
+
+3. Proof techniques
+✓q Notions of implication, converse, inverse, contrapositive,
+negation, and contradiction
+✓p Direct proofs, proofs by: counterexample, contraposition,
+contradiction
+✓p Mathematical induction
+✓p Strong induction (also known as complete induction)
+✓ Recursive mathematical definitions 
+(incl. mutually recursive definitions)
+
+4. Counting
+✓p Inclusion-exclusion principle
+✓p Pigeonhole principle
+✓p Pascal’s identity
+
+5. Graphs:
+✓q Undirected graphs 
+(degree, path, cycle, connectedness, Euler/Hamilton path/cycle, 
+handshaking lemma)
+✓q Directed graphs (in-degree, out-degree, directed path/cycle,
+Euler/Hamilton path/cycle)
+✓p Planar graphs
+
+-Branch-and-bound
+-Heuristics, lemmas
+
+-Quicksort and Quickselect to find the k-th smallest element
+-Eulerian path / cycle
+
+-Finding connected components and transitive closures
+-Bipartite matching O(VE)
+-Biconnectivity in undirected graphs (bridges, articulation
+points).
+-Connectivity in directed graphs (strongly connected components).
+-Basics of combinatorial game theory, winning and losing
+positions, minimax algorithm for optimal game playing
+
+-Balanced binary search trees 
+(treaps, splay trees, AVL trees, or scapegoat trees)
+-Augmented binary search trees
+-Creating persistent data structures binary path copying.
+
+-NP-hardness
+-Amortized analysis.
+
+-Checking for collinear points, parallel/orthogonal vectors
+and clockwise turns (for example, by using dot products
+and cross products).
+-Intersection of two lines.
+-Computing the area of a polygon from the coordinates of
+its vertices.
+-Checking whether a (general/convex) polygon contains a
+point.
+-Coordinate compression.
+-O(n log n) time algorithms for convex hull
+-Sweeping line method
+
+-Testing fundamentals, including test plan creation and test
+case generation
+-Black-box and white-box testing techniques
+
+
+
+

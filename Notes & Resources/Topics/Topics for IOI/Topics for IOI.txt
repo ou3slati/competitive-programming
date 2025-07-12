@@ -1,0 +1,30 @@
+-Persitent data structures (path copying) (Persistent seg. tree)
+-Decision tree (interactive problems)
+-Euler formula + planar graphs
+-Biconnected components
+-Divide & Conquer - SRQ
+-Binary search tree (statically balanced/balanced/augmented)
+-2D range queries
+-Basic geometry
+
+~-Convex Hull trick
+~-Inclusion exclusion 
+-Probability (expected value,...)
+-Strongly connected components
+-Bipartite matching
+-Hamiltonian cycle
+-Eulerian cycle
+-Handshaking lemma
+-BIT (range queries)
+-Ternary search
+-median-of-medians algorithm (O(N) worst-case) 
+
+-DSU
+-Dp on tree
+-non-trivial DP optimizations
+-game theory
+-Discrete math
+
+-Using graders
+-Custom comparators with lower_bound
+

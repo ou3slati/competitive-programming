@@ -1,0 +1,8 @@
+-constructing a solution? try it backwards
+-Bits? a+b = a^b + 2*(a&b)
+-two segments intersect if max(l1,l2) <= min(r1,r2)
+-Union-find updates: can be modeled as a (binary) tree
+-Manhattan distances:
+dist(p,q) = max( |p.d1 - q.d1| , |p.d2 - q.d2| )   (d1=x+y, d2=x-y)   
+-A tree path with certain properties --> centroid decomposition
+ Any path --> divide and conquer 

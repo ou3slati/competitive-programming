@@ -5,12 +5,6 @@ A comprehensive collection of competitive programming solutions, algorithms, and
 ## 👨‍💻 Author
 **Amine Oueslati** ([@ou3slati](https://github.com/ou3slati))
 
-## 📊 Repository Overview
-- **5,800+** problem solutions across 15+ platforms
-- **18** optimized algorithm implementations
-- **50+** contest problem analyses
-- **Educational resources** and reference materials
-
 ## 🗂️ Repository Structure
 
 ```
@@ -80,26 +74,6 @@ competitive-programming/
 | **EGOI** | 40+ | European Girls' Olympiad |
 | **CodeChef** | 60+ | Long/short contests |
 
-## 🎯 Key Features
-
-### Code Quality
-- **Clean implementations** with consistent formatting
-- **Technical comments** explaining complexity and insights
-- **Modern C++** features for optimization
-- **Professional structure** ready for interviews
-
-### Educational Value
-- **Problem analyses** with solution approaches
-- **Algorithm explanations** with complexity analysis
-- **Contest strategies** and implementation tips
-- **Reference materials** for continuous learning
-
-### Comprehensive Coverage
-- **Multiple platforms** for diverse problem types
-- **Contest participation** spanning several years
-- **Algorithm library** covering essential topics
-- **Resource collection** for competitive programming
-
 ## 🚀 Usage
 
 ### Compilation
@@ -129,23 +103,6 @@ int sum = ft.range_sum(l, r);
 - **Platforms Covered**: 15+
 - **Years Active**: 2021-2024
 - **Contest Participation**: IOI, EGOI, USACO, AtCoder, Codeforces
-
-## 🎓 Learning Path
-
-### Beginner
-1. Start with **Library/cpp_tricks/** for modern C++ techniques
-2. Practice basic problems from **Implementations/USACO/**
-3. Study **Notes & Resources/** for fundamental concepts
-
-### Intermediate  
-1. Implement **Library/data_structures/** algorithms
-2. Solve **Implementations/Codeforces/** contest problems
-3. Analyze **Nice Problems/ISIJ/** for advanced techniques
-
-### Advanced
-1. Master **Library/graph_theory/** and **math/** algorithms
-2. Tackle **Implementations/IOI/** olympiad problems
-3. Participate in live contests using the competition template
 
 ## 🤝 Contributing
 

@@ -1,0 +1,84 @@
+right
+right
+
+advRow:
+#inspect the current row and come back facing south
+
+left
+
+advCol:
+
+#if there's a pebble take it to the border and be there facing east
+pebble take
+jump endTaking
+take:
+
+get
+left
+left
+
+way:
+border endWay
+move
+jump way
+endWay:
+
+put
+left 
+left
+
+endTaking:
+#end of pebble taking
+
+border endAdvCol
+move
+jump advCol
+endAdvCol:
+
+left 
+left
+
+back: 
+border endBack
+move
+jump back
+endBack:
+
+left
+
+#end inspection 
+
+border endAdvRow
+move
+jump advRow
+endAdvRow:
+
+
+#taking all pebbles back home with us
+left
+left
+
+up:
+
+#if there are pebble move them up
+startHome:
+pebble takeBackHome
+jump endHome
+takeBackHome:
+get
+move
+put
+left 
+left
+move
+left 
+left
+jump startHome
+endHome:
+#end of pebbles moving
+
+move
+border end
+jump up
+end:
+#end of taking

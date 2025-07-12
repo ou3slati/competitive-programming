@@ -1,0 +1,110 @@
+//Never stop trying
+#include "bits/stdc++.h"
+using namespace std;
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+
+typedef long long ll;
+#define int ll
+typedef string str;
+typedef long double ld;
+typedef pair<int, int> pi;
+#define fi first
+#define se second
+typedef vector<int> vi;
+typedef vector<pi> vpi;
+#define pb push_back
+#define eb emplace_back
+#define sz(x) (int)x.size()
+#define all(x) begin(x), end(x)
+#define rall(x) rbegin(x), rend(x)
+#define endl "\n"
+#define FOR(i,a,b) for (int i = (a); i < (b); ++i)
+#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
+
+const int MOD = 1e9 + 7; //998244353
+const ll INF = 1e18;
+const int MX = 2e5 + 10;
+const int nx[4] = {0, 0, 1, -1}, ny[4] = {1, -1, 0, 0}; //right left down up
+
+template<class T> using V = vector<T>;
+template<class T> bool ckmin(T& a, const T& b) { return a > b ? a = b, 1 : 0; }
+template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+ll cdiv(ll a, ll b) { return a / b + ((a ^ b) > 0 && a % b); } // divide a by b rounded up
+//constexpr int log2(int x) { return 31 - __builtin_clz(x); } // floor(log2(x))
+
+mt19937 rng(chrono::system_clock::now().time_since_epoch().count());
+//mt19937_64 rng(chrono::system_clock::now().time_since_epoch().count());
+ll random(ll a, ll b){
+    return a + rng() % (b - a + 1);
+}
+#ifndef LOCAL  
+#define cerr if(false) cerr
+#endif
+#define dbg(x) cerr << #x << " : " << x << endl; 
+#define dbgs(x,y) cerr << #x << " : " << x << " / " << #y << " : " << y << endl;
+#define dbgv(v) cerr << #v << " : " << "[ "; for(auto it : v) cerr << it << ' '; cerr << ']' << endl;
+#define here() cerr << "here" << endl;
+
+void IO() {
+#ifdef LOCAL
+    freopen("input.txt", "r", stdin); 
+    freopen("output.txt", "w", stdout);
+#endif
+}
+/////////////////////////ONLY CLEAN CODES ALLOWED/////////////////////////
+
+const ld eps=1e-15;
+int N,X; 
+vi x(MX),y(MX);
+
+ld dist(int i, ld pos){
+	ld X=x[i],Y=y[i];
+	return sqrt((X-pos)*(X-pos)+Y*Y);
+}
+
+bool check(ld pos, int i){
+	FOR(j,0,N)if(i!=j){
+		if(dist(j,pos)<dist(i,pos) || 
+			(dist(j,pos)==dist(i,pos) && j<i)) return 0;
+	}
+	return 1;
+}
+
+int32_t main() {
+    boost; IO();
+
+    cin>>N>>X;
+    FOR(i,0,N){
+    	cin>>x[i]>>y[i];
+    	int v; cin>>v; cin>>v;
+    }
+    FOR(i,0,N){
+    	ld L=x[i],R=x[i];
+
+    	ld l=0,r=x[i];
+    	while(r-l>=eps){
+    		ld m=(l+r)/2; 
+    		if(check(m,i)){
+    			L=m; 
+    			r=m-eps;
+    		}
+    		else l=m+eps;
+    	}
+
+    	l=0,r=x[i];
+    	while(r-l>=eps){
+    		ld m=(l+r)/2;
+    		if(check(m,i)){
+    			R=m; 
+    			l=m+eps;
+    		}
+    		else r=m-eps;
+    	}
+
+    	cout <<fixed << setprecision(10) << ((R-L)/X)*100 << endl;
+    }
+    
+
+    return 0;
+}
+//Change your approach 

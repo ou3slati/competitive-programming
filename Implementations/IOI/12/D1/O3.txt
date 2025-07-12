@@ -1,0 +1,52 @@
+right
+
+pebble a3
+a2:
+move
+pebble a1
+jump a2
+a1:
+a3:
+
+main:
+
+b:
+move
+pebble c
+jump b
+c:
+
+left 
+left
+move
+put
+
+
+move
+pebble f
+jump g
+f:
+left 
+left
+move
+halt
+g:
+left 
+left
+move
+left 
+left
+
+
+d:
+move
+pebble e
+jump d
+e:
+
+left 
+left
+move 
+put
+
+jump main

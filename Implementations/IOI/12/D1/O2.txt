@@ -1,0 +1,132 @@
+left
+
+main: 
+
+pebble a
+
+left
+move
+
+swap:
+pebble zero
+jump stop1
+zero:
+get
+left
+left
+move
+put
+left
+left
+move
+pebble swap
+stop1:	
+
+left 
+left 
+move
+right
+move
+right
+move
+
+swap2:
+pebble zero2
+jump stop2
+zero2:
+get
+left
+left
+move
+put
+left
+left
+move
+pebble swap2
+stop2:
+
+left 
+left 
+move
+left
+move
+halt
+
+a: 
+
+left
+left
+move
+
+pebble b
+
+right 
+move
+
+swap3:
+pebble zero3
+jump stop3
+zero3:
+get
+left
+left
+move
+put
+left
+left
+move
+pebble swap3
+stop3:
+
+left
+left
+move
+left
+move
+left 
+move
+
+swap4:
+pebble zero4
+jump stop4
+zero4:
+get
+left
+left
+move
+put
+left
+left
+move
+pebble swap4
+stop4:
+
+left
+left
+move
+right
+move
+halt
+
+b:
+
+get
+right
+move
+put
+left
+left
+move
+left
+move
+
+get
+left
+move
+put
+left
+left
+move
+left	
+
+jump main

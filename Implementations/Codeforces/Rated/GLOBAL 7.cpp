@@ -1,0 +1,69 @@
+#pragma GCC optimize("O3")
+#include <bits/stdc++.h>
+using namespace std;
+#define boost ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+
+typedef string str;
+typedef long long ll;
+#define int ll
+typedef double db;
+typedef long double ldb;
+
+typedef pair<int,int> pi;
+#define mp make_pair
+#define fi first
+#define se second
+
+typedef vector<int> vi;
+typedef vector<vector<int>> vvi;
+typedef vector<ll> vl;
+typedef vector<db> vd;
+typedef vector<str> vs;
+typedef vector<pi> vpi;
+
+#define pb push_back
+#define eb emplace_back
+#define pf push_front
+
+#define lb lower_bound
+#define ub upper_bound
+
+#define sz(x) (int)x.size()
+#define all(x) begin(x), end(x)
+
+const int MOD = 1e9+7;
+const ll INF = 1e18;
+const int nx[4]={0,0,1,-1}, ny[4]={1,-1,0,0};
+
+int32_t main(){
+   boost;
+   int N,k; cin>>N>>k;
+   vpi vec;
+   for (int i=0; i<N; i++){
+      int x; cin >>x;
+      vec.pb({x,i});
+   }
+   int s=0;
+   sort(vec.rbegin(),vec.rend());
+   bool v[N]={false};
+   for (int i=0; i<k; i++){
+      int idx=vec[i].se;
+      v[idx]=true;
+      s+=vec[i].fi;
+   }
+   int res=1;
+   int i=0;
+
+   while(!v[i]) i++;
+   i++;
+   //cout << i ;
+   while(i<N){
+      int nb=1;
+      while(!v[i]&&i<N){i++; nb++;}
+      res=(res*(nb%998244353))%998244353;
+      i++;
+   }
+   cout << s << ' ' << res << endl;
+}
+
+

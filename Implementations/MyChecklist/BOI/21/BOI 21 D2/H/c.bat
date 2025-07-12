@@ -1,0 +1,1 @@
+g++ -std=gnu++17 -O2 -pipe -static -o a grader.cpp a.cpp
